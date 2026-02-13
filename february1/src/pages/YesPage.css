@@ -1,0 +1,316 @@
+.yes-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, 
+    hsl(340, 82%, 10%) 0%, 
+    hsl(340, 82%, 15%) 50%,
+    hsl(320, 75%, 12%) 100%
+  );
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 8s infinite ease-in;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Stagger the hearts */
+.heart-1 { left: 10%; animation-delay: 0s; }
+.heart-2 { left: 20%; animation-delay: 1s; font-size: 1.5rem; }
+.heart-3 { left: 30%; animation-delay: 2s; }
+.heart-4 { left: 40%; animation-delay: 0.5s; font-size: 2.5rem; }
+.heart-5 { left: 50%; animation-delay: 1.5s; }
+.heart-6 { left: 60%; animation-delay: 2.5s; font-size: 1.8rem; }
+.heart-7 { left: 70%; animation-delay: 3s; }
+.heart-8 { left: 80%; animation-delay: 0.8s; font-size: 2.2rem; }
+.heart-9 { left: 90%; animation-delay: 1.8s; }
+.heart-10 { left: 15%; animation-delay: 2.8s; font-size: 1.6rem; }
+.heart-11 { left: 25%; animation-delay: 3.5s; }
+.heart-12 { left: 35%; animation-delay: 0.3s; font-size: 2.3rem; }
+.heart-13 { left: 45%; animation-delay: 1.3s; }
+.heart-14 { left: 55%; animation-delay: 2.3s; font-size: 1.7rem; }
+.heart-15 { left: 65%; animation-delay: 3.3s; }
+.heart-16 { left: 75%; animation-delay: 0.6s; font-size: 2.1rem; }
+.heart-17 { left: 85%; animation-delay: 1.6s; }
+.heart-18 { left: 95%; animation-delay: 2.6s; font-size: 1.9rem; }
+.heart-19 { left: 5%; animation-delay: 3.6s; }
+.heart-20 { left: 50%; animation-delay: 4s; font-size: 2.4rem; }
+
+/* Main Content */
+.yes-content {
+  text-align: center;
+  z-index: 10;
+  max-width: 800px;
+  padding: var(--spacing-3xl);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.yes-content.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.emoji-circle {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto var(--spacing-xl);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 30px var(--color-primary);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 30px var(--color-primary);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px var(--color-primary-light);
+  }
+}
+
+.emoji-large {
+  font-size: 5rem;
+  animation: rotate 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.yes-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-xl);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.love-emojis {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.emoji {
+  font-size: 3rem;
+  display: inline-block;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.bounce-1 { animation-delay: 0s; }
+.bounce-2 { animation-delay: 0.2s; }
+.bounce-3 { animation-delay: 0.4s; }
+.bounce-4 { animation-delay: 0.6s; }
+.bounce-5 { animation-delay: 0.8s; }
+
+.yes-message {
+  font-size: var(--font-size-xl);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-2xl);
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.sparkles {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.sparkle {
+  font-size: 2rem;
+  display: inline-block;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+.sparkle-1 { animation-delay: 0s; }
+.sparkle-2 { animation-delay: 0.3s; }
+.sparkle-3 { animation-delay: 0.6s; }
+.sparkle-4 { animation-delay: 0.9s; }
+.sparkle-5 { animation-delay: 1.2s; }
+.sparkle-6 { animation-delay: 1.5s; }
+
+.love-quotes {
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.quote {
+  font-size: var(--font-size-lg);
+  font-style: italic;
+  color: var(--color-text-primary);
+  margin: var(--spacing-sm) 0;
+}
+
+/* Floating Symbols */
+.floating-symbols {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.symbol {
+  position: absolute;
+  font-size: 3rem;
+  animation: floatSymbol 6s ease-in-out infinite;
+}
+
+@keyframes floatSymbol {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+.symbol-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.symbol-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.symbol-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 2s;
+}
+
+.symbol-4 {
+  bottom: 30%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+
+.symbol-5 {
+  top: 50%;
+  left: 5%;
+  animation-delay: 0.5s;
+}
+
+/* Button */
+.yes-content .btn {
+  animation: fadeIn 1s ease-out 1s both;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .yes-content {
+    padding: var(--spacing-xl);
+  }
+
+  .emoji-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .emoji-large {
+    font-size: 4rem;
+  }
+
+  .love-emojis .emoji {
+    font-size: 2rem;
+  }
+
+  .yes-message {
+    font-size: var(--font-size-lg);
+  }
+
+  .floating-symbols .symbol {
+    font-size: 2rem;
+  }
+}
