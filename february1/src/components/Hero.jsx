@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-badge animate-slide-down">
           <span className="badge-icon">💕</span>
-          <span>Spread Sri & Madhu</span>
+          <span>Sri & Madhu</span>
         </div>
         
         <h1 className="hero-title animate-slide-up">
@@ -100,4 +100,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
